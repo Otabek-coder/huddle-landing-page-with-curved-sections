@@ -1,3 +1,10 @@
+
+#Huddle-landing-page-with-curved-sections by Frontend Mentor Challenge
+#Demo link [link](https://huddle-landing-page-with-curved-project.netlify.app)
+
+![desktop-design](https://user-images.githubusercontent.com/65924250/154856415-b8959ac8-3af4-4c68-a266-e44322f4d379.jpg)
+![mobile-design](https://user-images.githubusercontent.com/65924250/154856418-5386a38c-ad8f-4f35-b8e9-4e022aac57d9.jpg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
