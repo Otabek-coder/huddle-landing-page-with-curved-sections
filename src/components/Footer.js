@@ -8,9 +8,10 @@ const FooterEl = styled.div`
   color: #fff;
   justify-content: space-between;
   background-color: hsl(192, 100%, 9%);
-  padding: 4em;
+  padding: 0em 4em 3em 4em;
+  font-size:13px;
   @media (max-width: 49em) {
-    padding: 3em;
+    padding: 0em 2em 2em 3em;
   }
   @media (max-width: 47em) {
     flex-direction: column-reverse;
@@ -32,6 +33,7 @@ const CnsContainer = styled.div`
 `;
 
 const ContactContainer = styled.div`
+margin-top: -30px;
   text-align: left;
   color: #fff;
   width: 30%;
@@ -54,7 +56,7 @@ const ContactContainer = styled.div`
   .email-container {
     display: flex;
     align-items: center;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
   }
   .email-container p {
     margin: auto 1em;

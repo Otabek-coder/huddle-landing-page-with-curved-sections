@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const ImageWrapper = styled.div`
-  max-width: 70%;
+  max-width: 60%;
   margin: 4em  auto;
 
 `;

@@ -7,7 +7,7 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 25vh;
+  min-height: 50vh;
   @media (max-width: 65em) {
     min-height: 20vh;
   }
