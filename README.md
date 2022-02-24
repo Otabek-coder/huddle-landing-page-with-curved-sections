@@ -1,6 +1,6 @@
 
 ## Huddle-landing-page-with-curved-sections by Frontend Mentor Challenge
-### [Live site ur](https://huddle-landing-page-with-curved-project.netlify.app)
+### [Live site url](https://huddle-landing-page-with-curved-project.netlify.app)
 
 ![desktop-design](https://user-images.githubusercontent.com/65924250/154856415-b8959ac8-3af4-4c68-a266-e44322f4d379.jpg)
 ## Mobile version
