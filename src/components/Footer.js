@@ -96,18 +96,16 @@ const SubscribeContainer = styled.div`
     transition: all 0.2s ease-in;
   }
 
-
-  .error-state{
-    margin:1em 0em;
+  .error-state {
+    margin: 1em 0em;
     color: red;
     letter-spacing: 1.2px;
     font-weight: 700;
   }
-  .success-state{
-    margin:1em 0em;
+  .success-state {
+    margin: 1em 0em;
     color: green;
     letter-spacing: 1.3px;
-
   }
   button:hover {
     cursor: pointer;
@@ -156,6 +154,7 @@ const BgTop = styled.div`
   }
 `;
 export default function Footer() {
+  /* eslint-disable no-useless-escape */
   let emailRegex =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const [email, setEmail] = useState("");
@@ -170,7 +169,6 @@ export default function Footer() {
       // error
     } else {
       // alert("Invalid email");
-
       setState("error");
     }
   }
@@ -224,10 +222,14 @@ export default function Footer() {
 
             <button>Subscribe</button>
             {state === "success" && (
-              <p className="success-state">Email signed up has been successful</p>
+              <p className="success-state">
+                Email signed up has been successful
+              </p>
             )}
             {state === "error" && (
-              <p className="error-state">Please provide a valid email address! </p>
+              <p className="error-state">
+                Please provide a valid email address!{" "}
+              </p>
             )}
           </form>
         </SubscribeContainer>
