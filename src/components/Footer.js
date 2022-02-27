@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdFacebook } from "react-icons/md";
 import { IconContext } from "react-icons";
 import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
@@ -9,7 +9,7 @@ const FooterEl = styled.div`
   justify-content: space-between;
   background-color: hsl(192, 100%, 9%);
   padding: 0em 4em 3em 4em;
-  font-size:13px;
+  font-size: 13px;
   @media (max-width: 49em) {
     padding: 0em 2em 2em 3em;
   }
@@ -33,7 +33,7 @@ const CnsContainer = styled.div`
 `;
 
 const ContactContainer = styled.div`
-margin-top: -30px;
+  margin-top: -30px;
   text-align: left;
   color: #fff;
   width: 30%;
@@ -95,6 +95,20 @@ const SubscribeContainer = styled.div`
     border: 0;
     transition: all 0.2s ease-in;
   }
+
+
+  .error-state{
+    margin:1em 0em;
+    color: red;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+  }
+  .success-state{
+    margin:1em 0em;
+    color: green;
+    letter-spacing: 1.3px;
+
+  }
   button:hover {
     cursor: pointer;
     background-color: hsl(321, 100%, 78%);
@@ -142,6 +156,24 @@ const BgTop = styled.div`
   }
 `;
 export default function Footer() {
+  let emailRegex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const [email, setEmail] = useState("");
+  const [state, setState] = useState("");
+  function handleEmail(event) {
+    setEmail(event.target.value);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (emailRegex.test(email)) {
+      setState("success");
+      // error
+    } else {
+      // alert("Invalid email");
+
+      setState("error");
+    }
+  }
   return (
     <IconContext.Provider value={{ color: "#fff", size: "3em" }}>
       <BgTop></BgTop>
@@ -182,8 +214,22 @@ export default function Footer() {
             To recieve tips on how to grow your community, sign up to our weekly
             newsletter. We’ll never send you spam or pass on your email address
           </p>
-          <input type="text" />
-          <button>Subscribe</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              placeholder="Email Address"
+              value={email}
+              type="text"
+              onChange={handleEmail}
+            />
+
+            <button>Subscribe</button>
+            {state === "success" && (
+              <p className="success-state">Email signed up has been successful</p>
+            )}
+            {state === "error" && (
+              <p className="error-state">Please provide a valid email address! </p>
+            )}
+          </form>
         </SubscribeContainer>
       </FooterEl>
     </IconContext.Provider>
