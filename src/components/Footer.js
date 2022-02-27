@@ -75,7 +75,7 @@ const SubscribeContainer = styled.div`
   h1 {
     margin: 0.5em 0;
   }
-  p {
+  p{
     margin-bottom: 2em;
     max-width: 25vw;
     line-height: 1.4;
@@ -101,11 +101,14 @@ const SubscribeContainer = styled.div`
     color: red;
     letter-spacing: 1.2px;
     font-weight: 700;
+    max-width: 100vw;
   }
   .success-state {
     margin: 1em 0em;
     color: green;
     letter-spacing: 1.3px;
+    max-width: 100vw;
+
   }
   button:hover {
     cursor: pointer;
@@ -132,6 +135,21 @@ const SubscribeContainer = styled.div`
       width: 50%;
       display: block;
       margin: 0 0 8em auto;
+    }
+    form{
+      width: 100%;
+
+
+    }
+
+    .success-state{
+      margin: -7em 0em 3em 0em ;
+
+      
+    }
+    .error-state{
+      margin: -7em 0em 3em 0em ;
+
     }
   }
 `;
@@ -219,18 +237,19 @@ export default function Footer() {
               type="text"
               onChange={handleEmail}
             />
-
-            <button>Subscribe</button>
-            {state === "success" && (
-              <p className="success-state">
-                Email signed up has been successful
-              </p>
-            )}
-            {state === "error" && (
-              <p className="error-state">
-                Please provide a valid email address!{" "}
-              </p>
-            )}
+              <button>Subscribe</button>
+            <div className="state-container">
+              {state === "success" && (
+                <p className="success-state">
+                  Email sign up has been successful
+                </p>
+              )}
+              {state === "error" && (
+                <p className="error-state">
+                  Please provide a valid email address!{" "}
+                </p>
+              )}
+            </div>
           </form>
         </SubscribeContainer>
       </FooterEl>
