@@ -4,9 +4,9 @@ const HeadTag = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 3em 5em;
   margin-bottom: 5em;
-  width: 100%;
   @media (max-width: 47em) {
     padding: 2em 2em;
     img {
@@ -44,7 +44,6 @@ const Button = styled.button`
   }
   @media (max-width: 23em) {
     padding: 1em 4em;
-
   }
 `;
 export default function Header() {

@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
+  overflow-x:hidden;
 `;
 function App() {
   return (
